@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Porfolio</title>
+
+    <!--Box Icons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--Custom CSS-->
+    <link href="css\style.css" rel="stylesheet">
+</head>
+<footer>
+
+    <!--Header Design-->
+    <header class="header">
+        <i class='bx bx-happy-alt bx-lg'></i>        
+        <a href="#" class="logo">PORTFOLIO</a>
+
+        <i class="bx bx-menu" id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!--Home Section Design-->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h2>I'm</h2>
+            <h1 class="multiple-text"></h1>
+            <h3>This is my official Portfolio Website to show all</h3>
+            <h3>details and work experience.</h3>
+
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/dktesourabhdhavale/"><i type="solid" class="bx bxl-linkedin  bx-md "></i></a>
+            <a href="https://github.com/Sourabhdhavale?tab=repositories"><i class="bx bxl-github bx-md"></i></a>
+            
+        </div>
+        <a href="/images/Resume.pdf" download class="btn">Download CV</a>
+        </div>
+
+        <div class="home-img">
+            <img src="images/Home.jpg"> 
+        </div>
+    </section>
+
+    <!-- About Section Design-->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/About.jpg" alt="About image">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <p>To seek a position where I can contribute my skills 
+            and abilities to the growth of <br> the organization and evolve continuously
+             through learning <br> to build my professional career.
+            </p>
+        </div>
+    </section>
+
+    <!--Contact Section Design-->
+    <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me!</span></h2>
+       
+         <Form name="submit-to-google-sheet">
+            <div class="input-box">
+                <input type="text" name="Name" placeholder="Full Name">
+                <input type="email" name="Email" placeholder="Emai Address">
+            </div>
+            <div class="input-box">
+                <input type="number"name="Mobile Number" placeholder="Mobile Number">
+                <input type="text" name="Email Subject" placeholder="Email Subject">
+            </div>
+            <textarea name="Message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </Form>
+        <span id="msg"></span>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div>
+            <p>Sourabh's Portfolio</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-chevron-up'></i></a>
+        </div>
+    </footer>
+
+    <!--Scroll Reveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--Typed JS-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!--Custom JavaScript-->
+    <script src="js/script.js"></script>
+
+
+
+    <!--Contact Sheet-->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxvNP0f8bAINaBzFiVl0FH9XbcH8eN4aZGNRxxaV4kfw62FseI6W5CIXgT8QjnCpfw3/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        const message = document.getElementById('msg')
+        
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                message.innerHTML = "Message Sent Successfully!"
+                setTimeout(function(){
+                    message.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    
+</body>
+</html>

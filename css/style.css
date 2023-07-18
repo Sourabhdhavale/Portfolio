@@ -1,0 +1,392 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins',sans-serif;
+}
+
+:root{
+    --bg-color: #ffffff;
+    --second-bg-color: #323946;
+    --text-color: #040001;
+    --main-color: #007f7f;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden ;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem  2rem;
+}
+
+.header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: #1f2833;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.sticky{
+    border-bottom: .1rem solid rgba(0,0,0,.2);
+}
+
+.header i{
+    color: #ffffff;
+    padding-left: 8rem;
+}
+.logo{
+    font-size: 2.5rem;
+    color: var(--bg-color);
+    font-weight: 600;
+    cursor: default;
+     padding-right: 600px;
+}
+
+
+.navbar a{
+    font-size:1.7rem;
+    color: var(--bg-color);
+    margin-left: 4rem;
+    transition: .3s;    
+}
+
+
+.navbar a:hover
+{
+    color:  #000000;;
+}
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+} 
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content h1{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.multiple-text{
+    color: #007f7f;
+}
+.home-content h2{
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+.home-content h3{
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+}
+.social-media a:hover{
+    background-color: var(--main-color);
+    color: black;
+}
+
+.home img{
+    width: 35vw;
+    margin-left: 10rem;
+    animation: floatImage 4s ease-in-out infinite;
+}
+@keyframes floatImage{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2.4rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.btn{
+    display: inline-block;
+    padding: 2rem 3.8rem;
+    background: #123C69;
+    border-radius: 3rem;
+    font-size: 2rem;
+    color: var(--bg-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.5sec ease;
+}
+
+.btn:hover{
+    box-shadow: 0 0 1rem #394a5c;
+}
+
+.about{
+    display: flex;
+    justify-content: hover;
+    align-items: center;
+    gap: 2rem;
+    background: #deffff ;
+}
+.about-img img{
+    width: 35vw;
+    margin-left: 10rem;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4.5rem;
+}
+.about-content h2{
+    text-align: left;
+    line-height: 1.2;
+    
+}
+
+.about-content p{
+    font-size: 20px;
+    margin: 2rem 0 3rem;
+}
+
+.heading span{
+    color: #8d14b6;
+}
+
+
+.contact{
+    margin-top: 5rem;
+}
+.contact h2 span{
+    color:#ff3232
+}
+.contact h2{
+    margin-bottom: 3rem;
+}
+
+.contact form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: rgb(230, 245, 245);
+    border-radius: 0.8rem;
+    margin: 0.7rem 0;
+}
+.contact form .input-box input{
+    width:49% ;
+}
+.contact form textarea{
+    resize: none;
+}
+
+.contact form .btn{
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items:  center;
+    flex-wrap: wrap ;
+    padding: 2rem 9%; 
+    background-color:#1f2833;
+}
+.footer p{
+    font-size: 20px;
+    color: #ffffff;
+}
+.footer-iconTop a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8 rem;
+    background: var(--bg-color);
+    border-radius: 0.8rem;
+
+}
+.footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+}
+
+
+/*BREAKPOINTS*/
+
+@media(maz-width:1200px)
+{
+    html{
+        font-size: 55%;
+    }
+}
+
+@media(max-width: 991px){
+    .header{
+        padding: 2rem 3%;
+    }
+
+    section{
+        padding: 10rem 3% 2rem;
+    }
+
+    .services{
+        padding-bottom: 7rem 3% 2rem;
+    }
+
+    .portfolio{
+        padding-bottom: 7rem;
+    }
+    .contact{
+        min-height: auto;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+
+@media(max-width:768px)
+{
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        position:absolute;
+        top: 100%;
+        left:0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+        display: none;
+    }
+    .navbar:active{
+        display: block;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home{
+        flex-direction: column;
+    }
+
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width:70vw ;
+        margin-top: 4rem;
+    }
+
+    .about{
+        flex-direction: column-reverse;
+    }
+    
+    .about img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+    services h2{
+        margin-bottom: 3rem;
+    }
+}
+
+@media(max-width: 617px){
+    .portfolio-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+    .contact font.input-box{
+        width: 100%;
+     }
+}
+@media(max-width: 365px){
+    .home-img img{
+        width: 90vw;
+    }
+    .about-img img{
+        width: 90vw;;
+    }
+
+    .footer{
+        flex-direction: column-reverse;
+
+    }
+    .footer p{
+        text-align: center;
+        margin-top: 2rem; ;
+    }
+}
+
+#msg{
+    color: var(--second-bg-color);
+    margin-top: -10px;
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    
+}
+
