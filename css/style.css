@@ -43,6 +43,7 @@ section{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    position: sticky;
 }
 
 .header.sticky{
@@ -161,7 +162,7 @@ section{
     justify-content: hover;
     align-items: center;
     gap: 2rem;
-    background: #deffff ;
+    background: #deffff;
 }
 .about-img img{
     width: 35vw;
@@ -171,6 +172,7 @@ section{
 .heading{
     text-align: center;
     font-size: 4.5rem;
+    margin-bottom: 30px;
 }
 .about-content h2{
     text-align: left;
@@ -259,6 +261,87 @@ section{
     color: var(--second-bg-color);
 }
 
+/* SKILLS SECTION CSS */
+.skills{
+
+    background-color: #e8f0fe;
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: translateY(-12px); /* Adjust the float height */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.skill-cards {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    justify-items: center; /* Center cards horizontally */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    width: 120px;
+    border-radius: 12px;
+    background-color: #ffffff; /* White background for a clean look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for card lift effect */
+    border: 1px solid #e0e0e0; /* Soft border color */
+    animation: float 4s ease-in-out infinite; /* Smooth floating animation */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Stagger animations with different delays */
+.card:nth-child(even) {
+    animation-delay: 0s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 2s; /* Delay to stagger with even cards */
+}
+
+#skills-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Enhance the logo shadow */
+}
+
+.card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    margin: 0;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media(max-width: 1200px) {
+    .skill-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media(max-width: 768px) {
+    .skill-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 480px) {
+    .skill-cards {
+        grid-template-columns: 1fr;
+    }
+}
 
 /*BREAKPOINTS*/
 
